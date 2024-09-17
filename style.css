@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Inter+Tight:wght@200..800&family=Inter:wght@200..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Switzer", "Familjen Grotesk", "Inter Tight", sans-serif;
+}
+
+:root {
+  --accent: #105d5c;
+  --light: #c4e99f;
+}
+
+html, body {
+  background: #cfdddd;
+  width: 100%;
+  height: 100%;
+  color: #1d1d19;
+}
+
+.card-section {
+  padding: 15px;
+}
+
+h1 {
+  font-size: 35px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #093B3A;
+}
+
+.card-wrapper {
+  max-width: 1000px;
+  display: grid;
+  grid-auto-rows: minmax(190px, max-content);
+}
+
+.card {
+  padding: 15px;
+  border-radius: 20px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.card .card-heading {
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 500;
+  color: #181818;
+}
+
+.stat-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.stat-details-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-end;
+  gap: 20px;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+.stat-label {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  background: var(--accent);
+}
+
+.stat-details {
+  flex-grow: 1;
+}
+
+.stat-name {
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 2px;
+  color: #9FADAD;
+}
+
+.stat-num {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.stat-graph {
+  display: flex;
+  gap: 15px;
+}
+
+.stat-bars {
+  width: 10px;
+  height: 150px;
+  background:#e8f2f2;
+  border-radius: 10px;
+  position: relative;
+}
+
+.stat-inner-dark {
+  width: 100%;
+  height: calc(var(--d) * 1%);
+  transform-origin: center bottom;
+  position: absolute;
+  bottom: 0;
+  background: var(--accent);
+  border-radius: inherit;
+  z-index: 2;
+}
+
+.stat-inner-light {
+  width: 100%;
+  height: calc(var(--l) * 1%);
+  transform-origin: center bottom;
+  position: absolute;
+  bottom: 0;
+  background: var(--light);
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.card-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 15px;
+}
+
+.account-number {
+  color: #9FADAD;
+  font-size: 16px;
+  line-height: 16px;
+  margin-inline: 15px;
+}
+
+.green-bottom-bar {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--light);
+  background: var(--accent);
+  width: 100%;
+  align-self: stretch;
+  margin-right: auto;
+  padding: 5px 15px;
+  border-radius: 0 0 20px 20px;
+}
+
+span.light {
+  font-family: Inter;
+  color: rgba(215, 242, 242, 0.5);
+  font-weight: 300;
+}
+
+.subheading {
+  color: rgba(215, 242, 242, 1);
+  font-weight: 300;
+  margin-top: -10px;
+  margin-bottom: auto;
+}
+
+.progress-value {
+  color: #BEE5E5;
+  font-size: 16px;
+  font-family: Inter;
+}
+
+.progress-bar {
+  background: #0d4749;
+  height: 10px;
+  border-radius: 10px;
+}
+
+.progress-inner {
+  width: calc(var(--progress) * 1%);
+  height: 100%;
+  border-radius: 10px;
+  background: var(--light);
+}
+
+.card.column-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  
+}
+
+.card-left, .card-right {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card-right button {
+  display: block;
+  padding: 20px;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.pay-bill {
+  background: var(--light);
+  color: var(--accent);
+}
+
+.transfer {
+  background: var(--accent);
+  color: #f2f2f2;
+}
+
+.card.rowspan-2 {
+  padding: 10px;
+  grid-row: span 2;
+}
+
+.card.rowspan-2 .big-header {
+  background: var(--light);
+  padding: 10px 15px;
+  padding-top: 10px;
+  border-radius: 15px;
+}
+
+p.expenses {
+  font-size: 40px;
+  line-height: 45px;
+  font-family: Inter;
+  font-weight: 400;
+}
+
+.expenses-container {
+  padding-inline: 10px;
+}
+
+.expense {
+  padding: 10px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 2px solid #D7E7E7;
+}
+
+.expense-details {
+  flex-grow: 1;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.expense-name {
+  font-size: 17px;
+}
+
+.expense-time {
+  font-size: 15px;
+  color: #9FADAD;
+}
+
+.expense-price {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: Inter;
+}
+
+.upcoming-payment {
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.card-header {
+  font-size: 15px;
+  color: #95adad;
+  font-family: Inter;
+  margin-bottom: auto;
+}
+
+.upcoming-payment-price {
+  font-size: 30px;
+  color: #105d5c;
+  font-family: Inter;
+  font-weight: 500;
+}
+
+.upcoming-payment-name {
+  font-size: 18px;
+}
+
+.upcoming-payment-time {
+  font-size: 14px;
+  color: #B1B7B7;
+}
+
+@media screen and (min-width: 770px) {
+  .card-wrapper {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+  }
+}
