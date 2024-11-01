@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Card Animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #eee;
+      font-family: Inter, sans-serif;
+    }
+
+    /* Base Card Styles */
+    .card {
+      position: relative;
+      width: 300px;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    @property --angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    /* Animated Border Effect */
+    .card::after,
+    .card::before {
+      content: '';
+      position: absolute;
+      background: conic-gradient(from var(--angle), #BBDEF0, #FBD87F, #00A6A6, #6369D1, #BBDEF0) no-repeat;
+      inset: -5px;
+      border-radius: 10px;
+      transition: background 0.5s !important;
+      z-index: -1;
+    }
+
+    .card::before {
+      filter: blur(20px);
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+    
+    .card:hover::before, .card:hover::after {
+      animation: spin 2.5s linear forwards;
+    }
+
+    @keyframes spin {
+      0% {
+        --angle: 0deg;
+        background: conic-gradient(from var(--angle), #BBDEF0, #FBD87F, #00A6A6, #6369D1, #BBDEF0) no-repeat;
+      }
+
+      50% {
+        --angle: 360deg;
+        background: conic-gradient(from var(--angle), #BBDEF0, #FBD87F, #00A6A6, #6369D1, #BBDEF0) no-repeat;
+      }
+      51% {
+        background: conic-gradient(from var(--angle), #F75590, #F75590, #F75590, #F75590, #F75590) no-repeat;
+      }
+      100% {
+        background: conic-gradient(from var(--angle), #F75590, #F75590, #F75590, #F75590, #F75590) no-repeat;
+      }
+    }
+    
+    @keyframes fade {
+      from {
+        background: conic-gradient(from var(--angle), #BBDEF0, #FBD87F, #00A6A6, #6369D1, #BBDEF0) no-repeat;
+      }
+      to {
+        background: conic-gradient(from var(--angle), #F75590, #F75590, #F75590, #F75590, #F75590) no-repeat;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h2>Card Title</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe perferendis molestiae qui non at, odio molestias mollitia odit praesentium eum cum provident maiores, aperiam rerum.</p>
+  </div>
+</body>
+
+</html>
